@@ -82,7 +82,7 @@ def erase():
     print(" The task has been succesfully erased off the list.")
 
 def help():
-    print(""""
+    print("""
 󰝖 Doto - simple per-folder todo list
 
  Commands:
@@ -97,7 +97,7 @@ def help():
 $ doto init
 $ doto add "Bake some cookies!"
 $ doto tick 1
-"""")
+""")
 
 import sys
 
