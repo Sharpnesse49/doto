@@ -8,8 +8,7 @@ def init():
 
 def peek():
     from pathlib import Path
-    with open("doto.txt") as f:
-         doto = f.readlines()
+    doto = Path("doto.txt").read_text().splitlines()
 
     tasks = []
     for task in doto:
@@ -32,8 +31,32 @@ def peek():
 
     print("╰" + "─" * (width + 8) + "╯")
 
-# def flip
+def tick():
+    from pathlib import Path
+
+    doto = Path("doto.txt").read_text().splitlines()
+    task = doto[0]
+
+    if task.startswith("x"):
+        print("The task is already marked as done.")
+    else:
+        doto[0] = "x" + task
+        Path("doto.txt").write_text("\n".join(doto) + "\n", encoding="utf-8")
+        print("The task has been succesfully marked as done.")
+
+def clean():
+    from pathlib import Path
+
+    doto = Path("doto.txt").read_text().splitlines()
+    task = doto[0]
+
+    if task.startswith("x"):
+        doto[0] = task[1:]
+        Path("doto.txt").write_text("\n".join(doto) + "\n", encoding="utf-8")
+        print("The task has been succesfully cleaned.")
+    else:
+        print("The task isn't done yet.")
 
 # def add
 
-# def drop
+# def erase
