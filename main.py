@@ -57,6 +57,22 @@ def clean():
     else:
         print("The task isn't done yet.")
 
-# def add
+def add():
+    from pathlib import Path
 
-# def erase
+    with Path("doto.txt").open("a") as f:
+        f.write('\n"'+"test"+'"')
+    print("The task has been succesfully added to", Path.cwd().name)
+
+def erase():
+    from pathlib import Path
+
+    doto = Path("doto.txt").read_text().splitlines(keepends=True)
+    task = doto[0]
+
+    doto[0] = ""
+    Path("doto.txt").write_text("".join(doto), encoding="utf-8")
+    print("The task has been succesfully earased off the list.")
+
+erase()
+peek()
