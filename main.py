@@ -95,7 +95,7 @@ def help():
 
  Examples:
 $ doto init
-$ doto add "Bake some cookies!"
+$ doto add "Bake some cookies"
 $ doto tick 1
 $ doto peek
 """)
