@@ -86,12 +86,12 @@ def help():
 󰝖 Doto - simple per-folder todo list
 
  Commands:
-- init             Create doto.txt in the current folder
-- peek             Show the tasks
-- add   <title>    Add a task
-- tick  <number>   Mark a task as done
-- clean <number>   Unmark a done task
-- erase <number>   Delete a task
+- init  / i          Create doto.txt in the current folder
+- peek  / p          Show the tasks
+- add   / a <title>  Add a task
+- tick  / t <number> Mark a task as done
+- clean / c <number> Unmark a done task
+- erase / e <number> Delete a task
 
  Examples:
 $ doto init
@@ -105,15 +105,15 @@ if len(sys.argv) == 1:
     help()
     sys.exit()
 
-if sys.argv[1] == "init":
+if sys.argv[1] == "init" or sys.argv[1] == "i":
     init()
     sys.exit()
 
-if sys.argv[1] == "peek":
+if sys.argv[1] == "peek" or sys.argv[1] == "p":
     peek()
     sys.exit()
 
-if sys.argv[1] == "tick":
+if sys.argv[1] == "tick" or sys.argv[1] == "t":
     if len(sys.argv) == 3:
         tick()
         sys.exit()
@@ -121,7 +121,7 @@ if sys.argv[1] == "tick":
         print(" Targeted task's number requiered.")
         sys.exit()
 
-if sys.argv[1] == "clean":
+if sys.argv[1] == "clean" or sys.argv[1] == "c":
     if len(sys.argv) == 3:
         clean()
         sys.exit()
@@ -129,7 +129,7 @@ if sys.argv[1] == "clean":
         print(" Targeted task's number requiered.")
         sys.exit()
 
-if sys.argv[1] == "add":
+if sys.argv[1] == "add" or sys.argv[1] == "a":
     if len(sys.argv) == 3:
         add()
         sys.exit()
@@ -137,7 +137,7 @@ if sys.argv[1] == "add":
         print(" A descritpion of the task is requiered.")
         sys.exit()
 
-if sys.argv[1] == "erase":
+if sys.argv[1] == "erase" or sys.argv[1] == "e":
     if len(sys.argv) == 3:
         erase()
         sys.exit()
