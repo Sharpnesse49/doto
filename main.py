@@ -97,6 +97,7 @@ def help():
 $ doto init
 $ doto add "Bake some cookies!"
 $ doto tick 1
+$ doto peek
 """)
 
 import sys
