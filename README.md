@@ -18,4 +18,4 @@
 *From pypl (coming soon)*
 ## Requirements:
 - up-to-date python3
-- nerf font installed in terminal
+- nerd font installed in terminal
